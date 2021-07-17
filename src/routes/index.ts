@@ -1,19 +1,8 @@
-import { IRoute } from './IRoute';
+import { Router } from 'express';
+const router: Router = Router();
 
-export const Routes: IRoute[] = [
-  {
-    path: '/',
-    status: 200,
-    content: '<h1>Hello World!</h1>'
-  },
-  {
-    path: '/about',
-    status: 200,
-    content: '<h1>About</h1>'
-  },
-  {
-    path: '/contact',
-    status: 200,
-    content: '<h1>Contact</h1>'
-  }
-];
+router.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+export default router;
